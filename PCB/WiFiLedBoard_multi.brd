@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="6.1">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.05" unitdist="inch" unit="mm" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="mm"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="no" active="no"/>
+<layer number="95" name="Names" color="7" fill="1" visible="no" active="no"/>
+<layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
+<layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
+</layers>
+<board>
+<plain>
+<wire x1="0" y1="0" x2="100" y2="0" width="0" layer="20"/>
+<wire x1="100" y1="0" x2="100" y2="17.77" width="0" layer="20"/>
+<wire x1="100" y1="17.77" x2="0" y2="17.77" width="0" layer="20"/>
+<wire x1="0" y1="17.77" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="17.78" x2="100" y2="17.78" width="0" layer="20"/>
+<wire x1="100" y1="17.78" x2="100" y2="35.55" width="0" layer="20"/>
+<wire x1="100" y1="35.55" x2="0" y2="35.55" width="0" layer="20"/>
+<wire x1="0" y1="35.55" x2="0" y2="17.78" width="0" layer="20"/>
+<wire x1="0" y1="35.56" x2="100" y2="35.56" width="0" layer="20"/>
+<wire x1="100" y1="35.56" x2="100" y2="53.33" width="0" layer="20"/>
+<wire x1="100" y1="53.33" x2="0" y2="53.33" width="0" layer="20"/>
+<wire x1="0" y1="53.33" x2="0" y2="35.56" width="0" layer="20"/>
+<wire x1="0" y1="53.34" x2="100" y2="53.34" width="0" layer="20"/>
+<wire x1="100" y1="53.34" x2="100" y2="71.11" width="0" layer="20"/>
+<wire x1="100" y1="71.11" x2="0" y2="71.11" width="0" layer="20"/>
+<wire x1="0" y1="71.11" x2="0" y2="53.34" width="0" layer="20"/>
+</plain>
+<libraries>
+<library name="wirepad">
+<description>&lt;b&gt;Single Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SMD1,27-2,54">
+<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
+<smd name="1" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-0.8" y="-2.4" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+</package>
+</packages>
+</library>
+<library name="con-lstb">
+<description>&lt;b&gt;Pin Headers&lt;/b&gt;&lt;p&gt;
+Naming:&lt;p&gt;
+MA = male&lt;p&gt;
+# contacts - # rows&lt;p&gt;
+W = angled&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="MA03-1">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-3.175" y1="1.27" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="0.635" x2="-3.81" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-3.81" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-0.635" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.27" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-3.81" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
+<text x="-3.81" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<rectangle x1="-2.794" y1="-0.254" x2="-2.286" y2="0.254" layer="51"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+</package>
+</packages>
+</library>
+</libraries>
+<attributes>
+</attributes>
+<variantdefs>
+</variantdefs>
+<classes>
+<class number="0" name="default" width="0" drill="0">
+</class>
+</classes>
+<designrules>
+<description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
+&lt;p&gt;
+Die Standard-Design-Rules sind so gewählt, dass sie für 
+die meisten Anwendungen passen. Sollte ihre Platine 
+besondere Anforderungen haben, treffen Sie die erforderlichen
+Einstellungen hier und speichern die Design Rules unter 
+einem neuen Namen ab.</description>
+<description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
+&lt;p&gt;
+The default Design Rules have been set to cover
+a wide range of applications. Your particular design
+may have different requirements, so please make the
+necessary adjustments and save your customized
+design rules under a new name.</description>
+<param name="layerSetup" value="(1*16)"/>
+<param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
+<param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
+<param name="mdWireWire" value="12mil"/>
+<param name="mdWirePad" value="12mil"/>
+<param name="mdWireVia" value="12mil"/>
+<param name="mdPadPad" value="8mil"/>
+<param name="mdPadVia" value="8mil"/>
+<param name="mdViaVia" value="8mil"/>
+<param name="mdSmdPad" value="8mil"/>
+<param name="mdSmdVia" value="8mil"/>
+<param name="mdSmdSmd" value="8mil"/>
+<param name="mdViaViaSameLayer" value="8mil"/>
+<param name="mnLayersViaInSmd" value="2"/>
+<param name="mdCopperDimension" value="40mil"/>
+<param name="mdDrill" value="8mil"/>
+<param name="mdSmdStop" value="0mil"/>
+<param name="msWidth" value="10mil"/>
+<param name="msDrill" value="24mil"/>
+<param name="msMicroVia" value="9.99mm"/>
+<param name="msBlindViaRatio" value="0.5"/>
+<param name="rvPadTop" value="0.25"/>
+<param name="rvPadInner" value="0.25"/>
+<param name="rvPadBottom" value="0.25"/>
+<param name="rvViaOuter" value="0.25"/>
+<param name="rvViaInner" value="0.25"/>
+<param name="rvMicroViaOuter" value="0.25"/>
+<param name="rvMicroViaInner" value="0.25"/>
+<param name="rlMinPadTop" value="10mil"/>
+<param name="rlMaxPadTop" value="20mil"/>
+<param name="rlMinPadInner" value="10mil"/>
+<param name="rlMaxPadInner" value="20mil"/>
+<param name="rlMinPadBottom" value="10mil"/>
+<param name="rlMaxPadBottom" value="20mil"/>
+<param name="rlMinViaOuter" value="8mil"/>
+<param name="rlMaxViaOuter" value="20mil"/>
+<param name="rlMinViaInner" value="8mil"/>
+<param name="rlMaxViaInner" value="20mil"/>
+<param name="rlMinMicroViaOuter" value="4mil"/>
+<param name="rlMaxMicroViaOuter" value="20mil"/>
+<param name="rlMinMicroViaInner" value="4mil"/>
+<param name="rlMaxMicroViaInner" value="20mil"/>
+<param name="psTop" value="-1"/>
+<param name="psBottom" value="-1"/>
+<param name="psFirst" value="-1"/>
+<param name="psElongationLong" value="100"/>
+<param name="psElongationOffset" value="100"/>
+<param name="mvStopFrame" value="1"/>
+<param name="mvCreamFrame" value="0"/>
+<param name="mlMinStopFrame" value="4mil"/>
+<param name="mlMaxStopFrame" value="4mil"/>
+<param name="mlMinCreamFrame" value="0mil"/>
+<param name="mlMaxCreamFrame" value="0mil"/>
+<param name="mlViaStopLimit" value="0mil"/>
+<param name="srRoundness" value="0"/>
+<param name="srMinRoundness" value="0mil"/>
+<param name="srMaxRoundness" value="0mil"/>
+<param name="slThermalIsolate" value="10mil"/>
+<param name="slThermalsForVias" value="0"/>
+<param name="dpMaxLengthDifference" value="10mm"/>
+<param name="dpGapFactor" value="2.5"/>
+<param name="checkGrid" value="0"/>
+<param name="checkAngle" value="0"/>
+<param name="checkFont" value="1"/>
+<param name="checkRestrict" value="1"/>
+<param name="useDiameter" value="13"/>
+<param name="maxErrors" value="50"/>
+</designrules>
+<autorouter>
+<pass name="Default">
+<param name="RoutingGrid" value="50mil"/>
+<param name="tpViaShape" value="round"/>
+<param name="PrefDir.1" value="|"/>
+<param name="PrefDir.2" value="0"/>
+<param name="PrefDir.3" value="0"/>
+<param name="PrefDir.4" value="0"/>
+<param name="PrefDir.5" value="0"/>
+<param name="PrefDir.6" value="0"/>
+<param name="PrefDir.7" value="0"/>
+<param name="PrefDir.8" value="0"/>
+<param name="PrefDir.9" value="0"/>
+<param name="PrefDir.10" value="0"/>
+<param name="PrefDir.11" value="0"/>
+<param name="PrefDir.12" value="0"/>
+<param name="PrefDir.13" value="0"/>
+<param name="PrefDir.14" value="0"/>
+<param name="PrefDir.15" value="0"/>
+<param name="PrefDir.16" value="-"/>
+<param name="cfVia" value="8"/>
+<param name="cfNonPref" value="5"/>
+<param name="cfChangeDir" value="2"/>
+<param name="cfOrthStep" value="2"/>
+<param name="cfDiagStep" value="3"/>
+<param name="cfExtdStep" value="0"/>
+<param name="cfBonusStep" value="1"/>
+<param name="cfMalusStep" value="1"/>
+<param name="cfPadImpact" value="4"/>
+<param name="cfSmdImpact" value="4"/>
+<param name="cfBusImpact" value="0"/>
+<param name="cfHugging" value="3"/>
+<param name="cfAvoid" value="4"/>
+<param name="cfPolygon" value="10"/>
+<param name="cfBase.1" value="0"/>
+<param name="cfBase.2" value="1"/>
+<param name="cfBase.3" value="1"/>
+<param name="cfBase.4" value="1"/>
+<param name="cfBase.5" value="1"/>
+<param name="cfBase.6" value="1"/>
+<param name="cfBase.7" value="1"/>
+<param name="cfBase.8" value="1"/>
+<param name="cfBase.9" value="1"/>
+<param name="cfBase.10" value="1"/>
+<param name="cfBase.11" value="1"/>
+<param name="cfBase.12" value="1"/>
+<param name="cfBase.13" value="1"/>
+<param name="cfBase.14" value="1"/>
+<param name="cfBase.15" value="1"/>
+<param name="cfBase.16" value="0"/>
+<param name="mnVias" value="20"/>
+<param name="mnSegments" value="9999"/>
+<param name="mnExtdSteps" value="9999"/>
+<param name="mnRipupLevel" value="10"/>
+<param name="mnRipupSteps" value="100"/>
+<param name="mnRipupTotal" value="100"/>
+</pass>
+<pass name="Follow-me" refer="Default" active="yes">
+</pass>
+<pass name="Busses" refer="Default" active="yes">
+<param name="cfNonPref" value="4"/>
+<param name="cfBusImpact" value="4"/>
+<param name="cfHugging" value="0"/>
+<param name="mnVias" value="0"/>
+</pass>
+<pass name="Route" refer="Default" active="yes">
+</pass>
+<pass name="Optimize1" refer="Default" active="yes">
+<param name="cfVia" value="99"/>
+<param name="cfExtdStep" value="10"/>
+<param name="cfHugging" value="1"/>
+<param name="mnExtdSteps" value="1"/>
+<param name="mnRipupLevel" value="0"/>
+</pass>
+<pass name="Optimize2" refer="Optimize1" active="yes">
+<param name="cfNonPref" value="0"/>
+<param name="cfChangeDir" value="6"/>
+<param name="cfExtdStep" value="0"/>
+<param name="cfBonusStep" value="2"/>
+<param name="cfMalusStep" value="2"/>
+<param name="cfPadImpact" value="2"/>
+<param name="cfSmdImpact" value="2"/>
+<param name="cfHugging" value="0"/>
+</pass>
+<pass name="Optimize3" refer="Optimize2" active="yes">
+<param name="cfChangeDir" value="8"/>
+<param name="cfPadImpact" value="0"/>
+<param name="cfSmdImpact" value="0"/>
+</pass>
+<pass name="Optimize4" refer="Optimize3" active="yes">
+<param name="cfChangeDir" value="25"/>
+</pass>
+</autorouter>
+<elements>
+<element name="PAD1" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="4.445"/>
+<element name="PAD2" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="4.445"/>
+<element name="PAD3" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="4.445"/>
+<element name="PAD4" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="4.445"/>
+<element name="PAD5" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="4.445"/>
+<element name="PAD6" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="4.445"/>
+<element name="PAD7" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="4.445"/>
+<element name="PAD8" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="4.445"/>
+<element name="PAD9" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="4.445"/>
+<element name="PAD10" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="4.445"/>
+<element name="PAD11" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="4.445"/>
+<element name="PAD12" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="4.445"/>
+<element name="PAD13" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="4.445"/>
+<element name="PAD14" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="4.445"/>
+<element name="PAD15" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="4.445"/>
+<element name="SV1" library="con-lstb" package="MA03-1" value="" x="99.06" y="4.445" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="99.06" y="4.445" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="99.06" y="4.445" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="99.06" y="4.445" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="99.06" y="4.445" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD16" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="13.335"/>
+<element name="PAD17" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="13.335"/>
+<element name="PAD18" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="13.335"/>
+<element name="PAD19" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="13.335"/>
+<element name="PAD20" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="13.335"/>
+<element name="PAD21" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="13.335"/>
+<element name="PAD22" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="13.335"/>
+<element name="PAD23" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="13.335"/>
+<element name="PAD24" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="13.335"/>
+<element name="PAD25" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="13.335"/>
+<element name="PAD26" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="13.335"/>
+<element name="PAD27" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="13.335"/>
+<element name="PAD28" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="13.335"/>
+<element name="PAD29" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="13.335"/>
+<element name="PAD30" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="13.335"/>
+<element name="SV2" library="con-lstb" package="MA03-1" value="" x="99.06" y="13.335" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="120.65" y="70.485" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="120.65" y="70.485" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="120.65" y="70.485" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="120.65" y="70.485" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD31" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="22.225"/>
+<element name="PAD32" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="22.225"/>
+<element name="PAD33" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="22.225"/>
+<element name="PAD34" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="22.225"/>
+<element name="PAD35" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="22.225"/>
+<element name="PAD36" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="22.225"/>
+<element name="PAD37" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="22.225"/>
+<element name="PAD38" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="22.225"/>
+<element name="PAD39" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="22.225"/>
+<element name="PAD40" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="22.225"/>
+<element name="PAD41" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="22.225"/>
+<element name="PAD42" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="22.225"/>
+<element name="PAD43" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="22.225"/>
+<element name="PAD44" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="22.225"/>
+<element name="PAD45" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="22.225"/>
+<element name="SV3" library="con-lstb" package="MA03-1" value="" x="99.06" y="22.225" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="99.06" y="22.225" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="99.06" y="22.225" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="99.06" y="22.225" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="99.06" y="22.225" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD46" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="31.115"/>
+<element name="PAD47" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="31.115"/>
+<element name="PAD48" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="31.115"/>
+<element name="PAD49" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="31.115"/>
+<element name="PAD50" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="31.115"/>
+<element name="PAD51" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="31.115"/>
+<element name="PAD52" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="31.115"/>
+<element name="PAD53" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="31.115"/>
+<element name="PAD54" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="31.115"/>
+<element name="PAD55" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="31.115"/>
+<element name="PAD56" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="31.115"/>
+<element name="PAD57" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="31.115"/>
+<element name="PAD58" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="31.115"/>
+<element name="PAD59" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="31.115"/>
+<element name="PAD60" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="31.115"/>
+<element name="SV4" library="con-lstb" package="MA03-1" value="" x="99.06" y="31.115" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="120.65" y="88.265" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="120.65" y="88.265" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="120.65" y="88.265" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="120.65" y="88.265" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD61" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="40.005"/>
+<element name="PAD62" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="40.005"/>
+<element name="PAD63" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="40.005"/>
+<element name="PAD64" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="40.005"/>
+<element name="PAD65" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="40.005"/>
+<element name="PAD66" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="40.005"/>
+<element name="PAD67" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="40.005"/>
+<element name="PAD68" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="40.005"/>
+<element name="PAD69" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="40.005"/>
+<element name="PAD70" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="40.005"/>
+<element name="PAD71" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="40.005"/>
+<element name="PAD72" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="40.005"/>
+<element name="PAD73" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="40.005"/>
+<element name="PAD74" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="40.005"/>
+<element name="PAD75" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="40.005"/>
+<element name="SV5" library="con-lstb" package="MA03-1" value="" x="99.06" y="40.005" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="99.06" y="40.005" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="99.06" y="40.005" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="99.06" y="40.005" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="99.06" y="40.005" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD76" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="48.895"/>
+<element name="PAD77" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="48.895"/>
+<element name="PAD78" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="48.895"/>
+<element name="PAD79" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="48.895"/>
+<element name="PAD80" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="48.895"/>
+<element name="PAD81" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="48.895"/>
+<element name="PAD82" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="48.895"/>
+<element name="PAD83" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="48.895"/>
+<element name="PAD84" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="48.895"/>
+<element name="PAD85" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="48.895"/>
+<element name="PAD86" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="48.895"/>
+<element name="PAD87" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="48.895"/>
+<element name="PAD88" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="48.895"/>
+<element name="PAD89" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="48.895"/>
+<element name="PAD90" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="48.895"/>
+<element name="SV6" library="con-lstb" package="MA03-1" value="" x="99.06" y="48.895" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="120.65" y="106.045" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="120.65" y="106.045" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="120.65" y="106.045" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="120.65" y="106.045" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD91" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="57.785"/>
+<element name="PAD92" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="57.785"/>
+<element name="PAD93" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="57.785"/>
+<element name="PAD94" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="57.785"/>
+<element name="PAD95" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="57.785"/>
+<element name="PAD96" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="57.785"/>
+<element name="PAD97" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="57.785"/>
+<element name="PAD98" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="57.785"/>
+<element name="PAD99" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="57.785"/>
+<element name="PAD100" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="57.785"/>
+<element name="PAD101" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="57.785"/>
+<element name="PAD102" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="57.785"/>
+<element name="PAD103" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="57.785"/>
+<element name="PAD104" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="57.785"/>
+<element name="PAD105" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="57.785"/>
+<element name="SV7" library="con-lstb" package="MA03-1" value="" x="99.06" y="57.785" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="99.06" y="57.785" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="99.06" y="57.785" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="99.06" y="57.785" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="99.06" y="57.785" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="PAD106" library="wirepad" package="SMD1,27-2,54" value="" x="8.255" y="66.675"/>
+<element name="PAD107" library="wirepad" package="SMD1,27-2,54" value="" x="10.795" y="66.675"/>
+<element name="PAD108" library="wirepad" package="SMD1,27-2,54" value="" x="13.335" y="66.675"/>
+<element name="PAD109" library="wirepad" package="SMD1,27-2,54" value="" x="27.94" y="66.675"/>
+<element name="PAD110" library="wirepad" package="SMD1,27-2,54" value="" x="30.48" y="66.675"/>
+<element name="PAD111" library="wirepad" package="SMD1,27-2,54" value="" x="33.02" y="66.675"/>
+<element name="PAD112" library="wirepad" package="SMD1,27-2,54" value="" x="47.625" y="66.675"/>
+<element name="PAD113" library="wirepad" package="SMD1,27-2,54" value="" x="50.165" y="66.675"/>
+<element name="PAD114" library="wirepad" package="SMD1,27-2,54" value="" x="52.705" y="66.675"/>
+<element name="PAD115" library="wirepad" package="SMD1,27-2,54" value="" x="67.31" y="66.675"/>
+<element name="PAD116" library="wirepad" package="SMD1,27-2,54" value="" x="69.85" y="66.675"/>
+<element name="PAD117" library="wirepad" package="SMD1,27-2,54" value="" x="72.39" y="66.675"/>
+<element name="PAD118" library="wirepad" package="SMD1,27-2,54" value="" x="86.995" y="66.675"/>
+<element name="PAD119" library="wirepad" package="SMD1,27-2,54" value="" x="89.535" y="66.675"/>
+<element name="PAD120" library="wirepad" package="SMD1,27-2,54" value="" x="92.075" y="66.675"/>
+<element name="SV8" library="con-lstb" package="MA03-1" value="" x="99.06" y="66.675" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="120.65" y="123.825" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="120.65" y="123.825" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="120.65" y="123.825" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="120.65" y="123.825" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+</elements>
+<signals>
+<signal name="N$1">
+<contactref element="PAD3" pad="1"/>
+<contactref element="PAD4" pad="1"/>
+<wire x1="13.335" y1="4.445" x2="27.94" y2="4.445" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$2">
+<contactref element="PAD2" pad="1"/>
+<contactref element="PAD5" pad="1"/>
+<wire x1="10.795" y1="4.445" x2="10.795" y2="5.715" width="0.4064" layer="1"/>
+<wire x1="10.795" y1="5.715" x2="12.065" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="6.985" x2="29.21" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="6.985" x2="30.48" y2="5.715" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="5.715" x2="30.48" y2="4.445" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$4">
+<contactref element="PAD9" pad="1"/>
+<contactref element="PAD10" pad="1"/>
+<wire x1="52.705" y1="4.445" x2="67.31" y2="4.445" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$5">
+<contactref element="PAD8" pad="1"/>
+<contactref element="PAD11" pad="1"/>
+<wire x1="50.165" y1="4.445" x2="50.165" y2="5.715" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="5.715" x2="51.435" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="51.435" y1="6.985" x2="68.58" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="68.58" y1="6.985" x2="69.85" y2="5.715" width="0.4064" layer="1"/>
+<wire x1="69.85" y1="5.715" x2="69.85" y2="4.445" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$10">
+<contactref element="PAD18" pad="1"/>
+<contactref element="PAD19" pad="1"/>
+<wire x1="13.335" y1="13.335" x2="27.94" y2="13.335" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$11">
+<contactref element="PAD17" pad="1"/>
+<contactref element="PAD20" pad="1"/>
+<wire x1="10.795" y1="13.335" x2="10.795" y2="14.605" width="0.8128" layer="1"/>
+<wire x1="10.795" y1="14.605" x2="12.065" y2="15.875" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="15.875" x2="29.21" y2="15.875" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="15.875" x2="30.48" y2="14.605" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="14.605" x2="30.48" y2="13.335" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$13">
+<contactref element="PAD24" pad="1"/>
+<contactref element="PAD25" pad="1"/>
+<wire x1="52.705" y1="13.335" x2="67.31" y2="13.335" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$14">
+<contactref element="PAD23" pad="1"/>
+<contactref element="PAD26" pad="1"/>
+<wire x1="50.165" y1="13.335" x2="50.165" y2="14.605" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="14.605" x2="51.435" y2="15.875" width="0.8128" layer="1"/>
+<wire x1="51.435" y1="15.875" x2="68.58" y2="15.875" width="0.8128" layer="1"/>
+<wire x1="68.58" y1="15.875" x2="69.85" y2="14.605" width="0.8128" layer="1"/>
+<wire x1="69.85" y1="14.605" x2="69.85" y2="13.335" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$7">
+<contactref element="PAD14" pad="1"/>
+<contactref element="SV1" pad="2"/>
+<wire x1="89.535" y1="4.445" x2="89.535" y2="5.715" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="5.715" x2="90.805" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="6.985" x2="94.615" y2="6.985" width="0.4064" layer="1"/>
+<wire x1="94.615" y1="6.985" x2="97.155" y2="4.445" width="0.4064" layer="1"/>
+<wire x1="97.155" y1="4.445" x2="99.06" y2="4.445" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$8">
+<contactref element="PAD29" pad="1"/>
+<contactref element="SV2" pad="2"/>
+<wire x1="89.535" y1="13.335" x2="89.535" y2="12.065" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="12.065" x2="90.805" y2="10.795" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="10.795" x2="93.98" y2="10.795" width="0.4064" layer="1"/>
+<wire x1="93.98" y1="10.795" x2="96.52" y2="13.335" width="0.4064" layer="1"/>
+<wire x1="96.52" y1="13.335" x2="99.06" y2="13.335" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$9">
+<contactref element="PAD30" pad="1"/>
+<contactref element="SV2" pad="1"/>
+<wire x1="92.075" y1="13.335" x2="92.075" y2="14.605" width="0.4064" layer="1"/>
+<wire x1="92.075" y1="14.605" x2="93.345" y2="15.875" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="15.875" x2="99.06" y2="15.875" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$17">
+<contactref element="PAD15" pad="1"/>
+<contactref element="SV1" pad="3"/>
+<wire x1="99.06" y1="1.905" x2="93.345" y2="1.905" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="1.905" x2="92.075" y2="3.175" width="0.8128" layer="1"/>
+<wire x1="92.075" y1="3.175" x2="92.075" y2="4.445" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$19">
+<wire x1="0" y1="8.89" x2="100.33" y2="8.89" width="0.4064" layer="1"/>
+</signal>
+<signal name="GND">
+<contactref element="PAD13" pad="1"/>
+<contactref element="SV1" pad="1"/>
+<contactref element="PAD7" pad="1"/>
+<contactref element="PAD12" pad="1"/>
+<contactref element="PAD1" pad="1"/>
+<contactref element="PAD6" pad="1"/>
+<contactref element="PAD22" pad="1"/>
+<contactref element="PAD27" pad="1"/>
+<contactref element="SV2" pad="3"/>
+<contactref element="PAD28" pad="1"/>
+<contactref element="PAD16" pad="1"/>
+<contactref element="PAD21" pad="1"/>
+<polygon width="0.4064" layer="1">
+<vertex x="0" y="17.78"/>
+<vertex x="0" y="0"/>
+<vertex x="100.33" y="0"/>
+<vertex x="100.33" y="17.78"/>
+</polygon>
+<wire x1="99.06" y1="10.795" x2="99.06" y2="6.985" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$3">
+<wire x1="0" y1="17.78" x2="100.33" y2="17.78" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$6">
+<wire x1="0" y1="0" x2="100.33" y2="0" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$12">
+<contactref element="PAD33" pad="1"/>
+<contactref element="PAD34" pad="1"/>
+<wire x1="13.335" y1="22.225" x2="27.94" y2="22.225" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$15">
+<contactref element="PAD32" pad="1"/>
+<contactref element="PAD35" pad="1"/>
+<wire x1="10.795" y1="22.225" x2="10.795" y2="23.495" width="0.4064" layer="1"/>
+<wire x1="10.795" y1="23.495" x2="12.065" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="24.765" x2="29.21" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="24.765" x2="30.48" y2="23.495" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="23.495" x2="30.48" y2="22.225" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$16">
+<contactref element="PAD39" pad="1"/>
+<contactref element="PAD40" pad="1"/>
+<wire x1="52.705" y1="22.225" x2="67.31" y2="22.225" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$18">
+<contactref element="PAD38" pad="1"/>
+<contactref element="PAD41" pad="1"/>
+<wire x1="50.165" y1="22.225" x2="50.165" y2="23.495" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="23.495" x2="51.435" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="51.435" y1="24.765" x2="68.58" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="68.58" y1="24.765" x2="69.85" y2="23.495" width="0.4064" layer="1"/>
+<wire x1="69.85" y1="23.495" x2="69.85" y2="22.225" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$20">
+<contactref element="PAD48" pad="1"/>
+<contactref element="PAD49" pad="1"/>
+<wire x1="13.335" y1="31.115" x2="27.94" y2="31.115" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$21">
+<contactref element="PAD47" pad="1"/>
+<contactref element="PAD50" pad="1"/>
+<wire x1="10.795" y1="31.115" x2="10.795" y2="32.385" width="0.8128" layer="1"/>
+<wire x1="10.795" y1="32.385" x2="12.065" y2="33.655" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="33.655" x2="29.21" y2="33.655" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="33.655" x2="30.48" y2="32.385" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="32.385" x2="30.48" y2="31.115" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$22">
+<contactref element="PAD54" pad="1"/>
+<contactref element="PAD55" pad="1"/>
+<wire x1="52.705" y1="31.115" x2="67.31" y2="31.115" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$23">
+<contactref element="PAD53" pad="1"/>
+<contactref element="PAD56" pad="1"/>
+<wire x1="50.165" y1="31.115" x2="50.165" y2="32.385" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="32.385" x2="51.435" y2="33.655" width="0.8128" layer="1"/>
+<wire x1="51.435" y1="33.655" x2="68.58" y2="33.655" width="0.8128" layer="1"/>
+<wire x1="68.58" y1="33.655" x2="69.85" y2="32.385" width="0.8128" layer="1"/>
+<wire x1="69.85" y1="32.385" x2="69.85" y2="31.115" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$24">
+<contactref element="PAD44" pad="1"/>
+<contactref element="SV3" pad="2"/>
+<wire x1="89.535" y1="22.225" x2="89.535" y2="23.495" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="23.495" x2="90.805" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="24.765" x2="94.615" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="94.615" y1="24.765" x2="97.155" y2="22.225" width="0.4064" layer="1"/>
+<wire x1="97.155" y1="22.225" x2="99.06" y2="22.225" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$25">
+<contactref element="PAD59" pad="1"/>
+<contactref element="SV4" pad="2"/>
+<wire x1="89.535" y1="31.115" x2="89.535" y2="29.845" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="29.845" x2="90.805" y2="28.575" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="28.575" x2="93.98" y2="28.575" width="0.4064" layer="1"/>
+<wire x1="93.98" y1="28.575" x2="96.52" y2="31.115" width="0.4064" layer="1"/>
+<wire x1="96.52" y1="31.115" x2="99.06" y2="31.115" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$26">
+<contactref element="PAD60" pad="1"/>
+<contactref element="SV4" pad="1"/>
+<wire x1="92.075" y1="31.115" x2="92.075" y2="32.385" width="0.4064" layer="1"/>
+<wire x1="92.075" y1="32.385" x2="93.345" y2="33.655" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="33.655" x2="99.06" y2="33.655" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$27">
+<contactref element="PAD45" pad="1"/>
+<contactref element="SV3" pad="3"/>
+<wire x1="99.06" y1="19.685" x2="93.345" y2="19.685" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="19.685" x2="92.075" y2="20.955" width="0.8128" layer="1"/>
+<wire x1="92.075" y1="20.955" x2="92.075" y2="22.225" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$28">
+<wire x1="0" y1="26.67" x2="100.33" y2="26.67" width="0.4064" layer="1"/>
+</signal>
+<signal name="GND1">
+<contactref element="PAD43" pad="1"/>
+<contactref element="SV3" pad="1"/>
+<contactref element="PAD37" pad="1"/>
+<contactref element="PAD42" pad="1"/>
+<contactref element="PAD31" pad="1"/>
+<contactref element="PAD36" pad="1"/>
+<contactref element="PAD52" pad="1"/>
+<contactref element="PAD57" pad="1"/>
+<contactref element="SV4" pad="3"/>
+<contactref element="PAD58" pad="1"/>
+<contactref element="PAD46" pad="1"/>
+<contactref element="PAD51" pad="1"/>
+<polygon width="0.4064" layer="1">
+<vertex x="0" y="35.56"/>
+<vertex x="0" y="17.78"/>
+<vertex x="100.33" y="17.78"/>
+<vertex x="100.33" y="35.56"/>
+</polygon>
+<wire x1="99.06" y1="28.575" x2="99.06" y2="24.765" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$29">
+<wire x1="0" y1="35.56" x2="100.33" y2="35.56" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$30">
+<wire x1="0" y1="17.78" x2="100.33" y2="17.78" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$31">
+<contactref element="PAD63" pad="1"/>
+<contactref element="PAD64" pad="1"/>
+<wire x1="13.335" y1="40.005" x2="27.94" y2="40.005" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$32">
+<contactref element="PAD62" pad="1"/>
+<contactref element="PAD65" pad="1"/>
+<wire x1="10.795" y1="40.005" x2="10.795" y2="41.275" width="0.4064" layer="1"/>
+<wire x1="10.795" y1="41.275" x2="12.065" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="42.545" x2="29.21" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="42.545" x2="30.48" y2="41.275" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="41.275" x2="30.48" y2="40.005" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$33">
+<contactref element="PAD69" pad="1"/>
+<contactref element="PAD70" pad="1"/>
+<wire x1="52.705" y1="40.005" x2="67.31" y2="40.005" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$34">
+<contactref element="PAD68" pad="1"/>
+<contactref element="PAD71" pad="1"/>
+<wire x1="50.165" y1="40.005" x2="50.165" y2="41.275" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="41.275" x2="51.435" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="51.435" y1="42.545" x2="68.58" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="68.58" y1="42.545" x2="69.85" y2="41.275" width="0.4064" layer="1"/>
+<wire x1="69.85" y1="41.275" x2="69.85" y2="40.005" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$35">
+<contactref element="PAD78" pad="1"/>
+<contactref element="PAD79" pad="1"/>
+<wire x1="13.335" y1="48.895" x2="27.94" y2="48.895" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$36">
+<contactref element="PAD77" pad="1"/>
+<contactref element="PAD80" pad="1"/>
+<wire x1="10.795" y1="48.895" x2="10.795" y2="50.165" width="0.8128" layer="1"/>
+<wire x1="10.795" y1="50.165" x2="12.065" y2="51.435" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="51.435" x2="29.21" y2="51.435" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="51.435" x2="30.48" y2="50.165" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="50.165" x2="30.48" y2="48.895" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$37">
+<contactref element="PAD84" pad="1"/>
+<contactref element="PAD85" pad="1"/>
+<wire x1="52.705" y1="48.895" x2="67.31" y2="48.895" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$38">
+<contactref element="PAD83" pad="1"/>
+<contactref element="PAD86" pad="1"/>
+<wire x1="50.165" y1="48.895" x2="50.165" y2="50.165" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="50.165" x2="51.435" y2="51.435" width="0.8128" layer="1"/>
+<wire x1="51.435" y1="51.435" x2="68.58" y2="51.435" width="0.8128" layer="1"/>
+<wire x1="68.58" y1="51.435" x2="69.85" y2="50.165" width="0.8128" layer="1"/>
+<wire x1="69.85" y1="50.165" x2="69.85" y2="48.895" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$39">
+<contactref element="PAD74" pad="1"/>
+<contactref element="SV5" pad="2"/>
+<wire x1="89.535" y1="40.005" x2="89.535" y2="41.275" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="41.275" x2="90.805" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="42.545" x2="94.615" y2="42.545" width="0.4064" layer="1"/>
+<wire x1="94.615" y1="42.545" x2="97.155" y2="40.005" width="0.4064" layer="1"/>
+<wire x1="97.155" y1="40.005" x2="99.06" y2="40.005" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$40">
+<contactref element="PAD89" pad="1"/>
+<contactref element="SV6" pad="2"/>
+<wire x1="89.535" y1="48.895" x2="89.535" y2="47.625" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="47.625" x2="90.805" y2="46.355" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="46.355" x2="93.98" y2="46.355" width="0.4064" layer="1"/>
+<wire x1="93.98" y1="46.355" x2="96.52" y2="48.895" width="0.4064" layer="1"/>
+<wire x1="96.52" y1="48.895" x2="99.06" y2="48.895" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$41">
+<contactref element="PAD90" pad="1"/>
+<contactref element="SV6" pad="1"/>
+<wire x1="92.075" y1="48.895" x2="92.075" y2="50.165" width="0.4064" layer="1"/>
+<wire x1="92.075" y1="50.165" x2="93.345" y2="51.435" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="51.435" x2="99.06" y2="51.435" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$42">
+<contactref element="PAD75" pad="1"/>
+<contactref element="SV5" pad="3"/>
+<wire x1="99.06" y1="37.465" x2="93.345" y2="37.465" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="37.465" x2="92.075" y2="38.735" width="0.8128" layer="1"/>
+<wire x1="92.075" y1="38.735" x2="92.075" y2="40.005" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$43">
+<wire x1="0" y1="44.45" x2="100.33" y2="44.45" width="0.4064" layer="1"/>
+</signal>
+<signal name="GND2">
+<contactref element="PAD73" pad="1"/>
+<contactref element="SV5" pad="1"/>
+<contactref element="PAD67" pad="1"/>
+<contactref element="PAD72" pad="1"/>
+<contactref element="PAD61" pad="1"/>
+<contactref element="PAD66" pad="1"/>
+<contactref element="PAD82" pad="1"/>
+<contactref element="PAD87" pad="1"/>
+<contactref element="SV6" pad="3"/>
+<contactref element="PAD88" pad="1"/>
+<contactref element="PAD76" pad="1"/>
+<contactref element="PAD81" pad="1"/>
+<polygon width="0.4064" layer="1">
+<vertex x="0" y="53.34"/>
+<vertex x="0" y="35.56"/>
+<vertex x="100.33" y="35.56"/>
+<vertex x="100.33" y="53.34"/>
+</polygon>
+<wire x1="99.06" y1="46.355" x2="99.06" y2="42.545" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$44">
+<wire x1="0" y1="53.34" x2="100.33" y2="53.34" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$45">
+<wire x1="0" y1="35.56" x2="100.33" y2="35.56" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$46">
+<contactref element="PAD93" pad="1"/>
+<contactref element="PAD94" pad="1"/>
+<wire x1="13.335" y1="57.785" x2="27.94" y2="57.785" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$47">
+<contactref element="PAD92" pad="1"/>
+<contactref element="PAD95" pad="1"/>
+<wire x1="10.795" y1="57.785" x2="10.795" y2="59.055" width="0.4064" layer="1"/>
+<wire x1="10.795" y1="59.055" x2="12.065" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="60.325" x2="29.21" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="60.325" x2="30.48" y2="59.055" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="59.055" x2="30.48" y2="57.785" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$48">
+<contactref element="PAD99" pad="1"/>
+<contactref element="PAD100" pad="1"/>
+<wire x1="52.705" y1="57.785" x2="67.31" y2="57.785" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$49">
+<contactref element="PAD98" pad="1"/>
+<contactref element="PAD101" pad="1"/>
+<wire x1="50.165" y1="57.785" x2="50.165" y2="59.055" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="59.055" x2="51.435" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="51.435" y1="60.325" x2="68.58" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="68.58" y1="60.325" x2="69.85" y2="59.055" width="0.4064" layer="1"/>
+<wire x1="69.85" y1="59.055" x2="69.85" y2="57.785" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$50">
+<contactref element="PAD108" pad="1"/>
+<contactref element="PAD109" pad="1"/>
+<wire x1="13.335" y1="66.675" x2="27.94" y2="66.675" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$51">
+<contactref element="PAD107" pad="1"/>
+<contactref element="PAD110" pad="1"/>
+<wire x1="10.795" y1="66.675" x2="10.795" y2="67.945" width="0.8128" layer="1"/>
+<wire x1="10.795" y1="67.945" x2="12.065" y2="69.215" width="0.4064" layer="1"/>
+<wire x1="12.065" y1="69.215" x2="29.21" y2="69.215" width="0.4064" layer="1"/>
+<wire x1="29.21" y1="69.215" x2="30.48" y2="67.945" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="67.945" x2="30.48" y2="66.675" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$52">
+<contactref element="PAD114" pad="1"/>
+<contactref element="PAD115" pad="1"/>
+<wire x1="52.705" y1="66.675" x2="67.31" y2="66.675" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$53">
+<contactref element="PAD113" pad="1"/>
+<contactref element="PAD116" pad="1"/>
+<wire x1="50.165" y1="66.675" x2="50.165" y2="67.945" width="0.4064" layer="1"/>
+<wire x1="50.165" y1="67.945" x2="51.435" y2="69.215" width="0.8128" layer="1"/>
+<wire x1="51.435" y1="69.215" x2="68.58" y2="69.215" width="0.8128" layer="1"/>
+<wire x1="68.58" y1="69.215" x2="69.85" y2="67.945" width="0.8128" layer="1"/>
+<wire x1="69.85" y1="67.945" x2="69.85" y2="66.675" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$54">
+<contactref element="PAD104" pad="1"/>
+<contactref element="SV7" pad="2"/>
+<wire x1="89.535" y1="57.785" x2="89.535" y2="59.055" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="59.055" x2="90.805" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="60.325" x2="94.615" y2="60.325" width="0.4064" layer="1"/>
+<wire x1="94.615" y1="60.325" x2="97.155" y2="57.785" width="0.4064" layer="1"/>
+<wire x1="97.155" y1="57.785" x2="99.06" y2="57.785" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$55">
+<contactref element="PAD119" pad="1"/>
+<contactref element="SV8" pad="2"/>
+<wire x1="89.535" y1="66.675" x2="89.535" y2="65.405" width="0.4064" layer="1"/>
+<wire x1="89.535" y1="65.405" x2="90.805" y2="64.135" width="0.4064" layer="1"/>
+<wire x1="90.805" y1="64.135" x2="93.98" y2="64.135" width="0.4064" layer="1"/>
+<wire x1="93.98" y1="64.135" x2="96.52" y2="66.675" width="0.4064" layer="1"/>
+<wire x1="96.52" y1="66.675" x2="99.06" y2="66.675" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$56">
+<contactref element="PAD120" pad="1"/>
+<contactref element="SV8" pad="1"/>
+<wire x1="92.075" y1="66.675" x2="92.075" y2="67.945" width="0.4064" layer="1"/>
+<wire x1="92.075" y1="67.945" x2="93.345" y2="69.215" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="69.215" x2="99.06" y2="69.215" width="0.8128" layer="1"/>
+</signal>
+<signal name="N$57">
+<contactref element="PAD105" pad="1"/>
+<contactref element="SV7" pad="3"/>
+<wire x1="99.06" y1="55.245" x2="93.345" y2="55.245" width="0.8128" layer="1"/>
+<wire x1="93.345" y1="55.245" x2="92.075" y2="56.515" width="0.8128" layer="1"/>
+<wire x1="92.075" y1="56.515" x2="92.075" y2="57.785" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$58">
+<wire x1="0" y1="62.23" x2="100.33" y2="62.23" width="0.4064" layer="1"/>
+</signal>
+<signal name="GND3">
+<contactref element="PAD103" pad="1"/>
+<contactref element="SV7" pad="1"/>
+<contactref element="PAD97" pad="1"/>
+<contactref element="PAD102" pad="1"/>
+<contactref element="PAD91" pad="1"/>
+<contactref element="PAD96" pad="1"/>
+<contactref element="PAD112" pad="1"/>
+<contactref element="PAD117" pad="1"/>
+<contactref element="SV8" pad="3"/>
+<contactref element="PAD118" pad="1"/>
+<contactref element="PAD106" pad="1"/>
+<contactref element="PAD111" pad="1"/>
+<polygon width="0.4064" layer="1">
+<vertex x="0" y="71.12"/>
+<vertex x="0" y="53.34"/>
+<vertex x="100.33" y="53.34"/>
+<vertex x="100.33" y="71.12"/>
+</polygon>
+<wire x1="99.06" y1="64.135" x2="99.06" y2="60.325" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$59">
+<wire x1="0" y1="71.12" x2="100.33" y2="71.12" width="0.4064" layer="1"/>
+</signal>
+<signal name="N$60">
+<wire x1="0" y1="53.34" x2="100.33" y2="53.34" width="0.4064" layer="1"/>
+</signal>
+</signals>
+</board>
+</drawing>
+</eagle>

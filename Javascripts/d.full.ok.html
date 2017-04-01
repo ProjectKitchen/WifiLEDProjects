@@ -1,0 +1,252 @@
+<html>
+<body>
+<head>
+<title>WiFi LED Demo</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<style>
+.color-sel { width: 24px; height: 24px; text-align: center;}
+.pixel-sel { width: 48px; height: 48px; background-color: black; }
+button { font-size: 16px; }
+p { font-size:18px; font-style:normal; line-height:0px; }
+table { border-color:lightgray; border-collapse:collapse; }
+</style>
+</head>
+<body>
+<form action="#" id="scrolltext-form">
+<label for="scrolltext">Scrolltext:</label>
+<INPUT TYPE="text" NAME="scrolltext" ID="scrolltext" style="font-weight:bold" VALUE=" put your scrolltext here !! use icons with $1, $2, ..." SIZE=50>
+<button type="submit" style="font-weight:bold">Submit Text</button>
+</form>
+
+<p>
+background mode (0-2): <input id="slider0" type="range" min="0" max="2" step="1" value="0" onchange="send_bgmode(slider0.value)"/>
+</p>
+<script>
+var nh=12,i,j,cc='rgb(255, 255, 255)';
+var cc_elem;
+function w(s) { document.write(s); }
+function id(s){ return document.getElementById(s); }
+function mark(e) {e.innerHTML='&#10004;';}
+function cs_click(e) {
+var bg=e.target.style.backgroundColor;
+cc_elem.innerHTML='';
+mark(e.target);
+cc=bg;
+cc_elem=e.target;
+}
+w('<table border=1>');
+idx=0;
+for(i=0;i<2;i++) {
+w('<tr>');
+for(j=0;j<nh;j++,idx++) {
+w('<td class=color-sel id=cs'+idx+'></td>');
+var obj=id('cs'+idx);
+if(i==0) { var hue=(j/nh)*360; obj.style.background='hsl('+hue+',100%,50%)'; }
+else { var lit=(j/(nh-1))*100; obj.style.background='hsl(0,0%,'+lit+'%)'; }
+obj.addEventListener('click',cs_click);
+}
+w('</tr>');
+}
+w('</table>');
+cc_elem=id('cs'+(2*nh-1));
+mark(cc_elem);
+</script>
+
+
+<script>
+console.log(id('scrolltext-form'));
+id('scrolltext-form').addEventListener('submit', function(event){
+console.log("SUBIT FORM");
+	event.preventDefault();
+	console.log(id('scrolltext'));
+	console.log(cc);
+	console.log(rgb2cc(cc));
+	//send_scrolltext(document.getElementById('textfield1').value)
+	var comm='/sc?scrolltext='+id('scrolltext').value+'&color='+rgb2cc(cc)
+	console.log('send text: '+comm)
+	show_comm(comm);
+	send_comm(comm);
+console.log("SENT");
+	return false;
+});
+
+/*
+id('btn_sendtext').addEventListener('click', function(e) {
+//send_scrolltext(document.getElementById('textfield1').value)
+var comm='/sc?scrolltext='+id('scrolltext').value+'&color='+rgb2cc(cc)
+console.log('send text: '+comm)
+show_comm(comm);
+send_comm(comm);
+});
+*/
+</script>
+
+<hr />
+<p>Set pixel color: <button id='btn_fill'>Fill</button> <button id='btn_clear'>Clear</button> <button id='btn_submit'><b>Submit</b></button> <button id='btn_add'><b>Add</b></button> <button id='btn_del'><b>Delete</b></button></p>
+<script>
+function ps_click(e) { if(e.target.style.background==cc) e.target.style.background='rgb(0,0,0)'; else e.target.style.background=cc; }
+w('<table border=1 style="border-collapse: separate; border-spacing: 2px;">');
+idx=0;
+for(i=0;i<7;i++) {
+w('<tr>');
+for(j=0;j<5;j++,idx++) {
+w('<td class=pixel-sel id=ps'+idx+'></td>');
+id('ps'+idx).addEventListener('click',ps_click);
+}
+w('</tr>');
+}
+w('</table>');
+</script>
+<p>Pre-defined patterns:</p>
+<button id='btn_smiley'>Smiley</button> <button id='btn_pumpkin'>Pumpkin</button> <button id='btn_skull'>Skull</button> <button id='btn_heart'>Heart</button> <button id='btn_checker'>Checker</button>
+
+<hr />
+<p> general brightness (1-255): <input id="slider1" type="range" min="1" max="255" step="5" value="70" onchange="send_brightness(slider1.value)"/></p>
+<p> scroll brightness (1-255): <input id="slider3" type="range" min="1" max="255" step="5" value="200" onchange="send_scbrightness(slider3.value)"/></p>
+<p> background brightness (1-255): <input id="slider4" type="range" min="1" max="255" step="5" value="20" onchange="send_bgbrightness(slider4.value)"/></p>
+<p> icon brightness (1-255): <input id="slider5" type="range" min="1" max="255" step="5" value="50" onchange="send_icbrightness(slider5.value)"/></p>
+<p> scroll delay (3-255): <input id="slider2" type="range" min="3" max="255" step="1" value="30" onchange="send_scwait(slider2.value)"/> </p>
+<p> background delay (3-255): <input id="slider6" type="range" min="3" max="255" step="1" value="10" onchange="send_bgwait(slider6.value)"/> </p>
+
+<hr />
+<p><input type=checkbox id='cb_comm'> Show HTTP Get command
+</p>
+<label id='lbl_comm'></label>
+<script>
+function rgb2cc(rgb) {
+if(!rgb) return '000000';
+rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+function hex(x) { return ('0' + parseInt(x).toString(16)).slice(-2); }
+return '' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+id('btn_fill').addEventListener('click',function(e) {
+for(i=0;i<35;i++) id('ps'+i).style.background = cc;
+});
+id('btn_clear').addEventListener('click',function(e) {
+for(i=0;i<35;i++) id('ps'+i).style.background = 'rgb(0, 0, 0)';
+});
+function send_comm(comm) {
+var xhr=new XMLHttpRequest();
+xhr.onreadystatechange=function() {
+if(xhr.readyState==4 && xhr.status==200) {
+var jd=JSON.parse(xhr.responseText);
+// jd stores the response data
+}
+};
+comm = 'http://192.168.4.1'+comm;
+xhr.open('GET',comm,true);
+xhr.send();
+}
+function show_comm(comm) {
+comm = 'http://192.168.4.1'+comm;
+if(id('cb_comm').checked) id('lbl_comm').innerHTML=comm;
+else id('lbl_comm').innerHTML='';
+}
+id('btn_add').addEventListener('click', function(e) {
+var comm='/ic?pixels=';
+for(i=0;i<35;i++) comm+=rgb2cc(id('ps'+i).style.background);
+show_comm(comm);
+send_comm(comm);
+});
+id('btn_del').addEventListener('click', function(e) {
+var comm='/ic?clear=0';
+show_comm(comm);
+send_comm(comm);
+});
+
+function set_icon(icon, fg, bg) {
+for(i=0;i<35;i++) id('ps'+i).style.background=(icon[i]>0)?fg:bg;
+}
+function set_icon2(icon) {
+for(i=0;i<35;i++) id('ps'+i).style.background=icon[i];
+}
+id('btn_smiley').addEventListener('click', function(e) {
+var smiley=[0,1,1,1,0,
+1,0,0,0,1,
+1,1,0,1,1,
+1,0,0,0,1,
+1,1,1,1,1,
+1,0,0,0,1,
+0,1,1,1,0];
+set_icon(smiley, '#00FF00', '#000000');
+});
+id('btn_heart').addEventListener('click', function(e) {
+var heart=[0,0,0,0,0,
+0,1,0,1,0,
+1,1,1,1,1,
+1,1,1,1,1,
+0,1,1,1,0,
+0,0,1,0,0,
+0,0,0,0,0];
+set_icon(heart, '#FF0000', '#000020');
+});
+id('btn_checker').addEventListener('click', function(e) {
+var checker=[1,0,1,0,1,
+0,1,0,1,0,
+1,0,1,0,1,
+0,1,0,1,0,
+1,0,1,0,1,
+0,1,0,1,0,
+1,0,1,0,1];
+set_icon(checker, '#FF0000', '#000020');
+});
+id('btn_skull').addEventListener('click', function(e) {
+var skull=[0,1,1,1,0,
+1,0,0,0,1,
+1,1,0,1,1,
+1,0,0,0,1,
+0,1,0,1,0,
+0,1,0,1,0,
+0,1,1,1,0];
+set_icon(skull, '#0000FF', '#000000');
+});
+id('btn_pumpkin').addEventListener('click', function(e) {
+var pumpkin=['#000000','#008000','#000000','#000000','#000000',
+'#000000','#000000','#008000','#000000','#000000',
+'#000000','#802000','#802000','#802000','#000000',
+'#802000','#000000','#000000','#000000','#802000',
+'#802000','#000000','#000000','#000000','#802000',
+'#802000','#000000','#000000','#000000','#802000',
+'#000000','#802000','#802000','#802000','#000000'];
+set_icon2(pumpkin);
+});
+
+
+	var xhr=new XMLHttpRequest();
+	function send_scrolltext(text) {
+		xhr.open('GET','http://192.168.4.1/sc?scrolltext='+text+'&color='+rgb2cc(cc),true);
+		xhr.send();
+	}	
+	function send_scbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/sc?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_scwait(text) {
+		xhr.open('GET','http://192.168.4.1/sc?wait='+text,true);
+		xhr.send();
+	}	
+	function send_bgwait(text) {
+		xhr.open('GET','http://192.168.4.1/bg?wait='+text,true);
+		xhr.send();
+	}	
+	function send_bgbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/bg?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_bgmode(text) {
+		xhr.open('GET','http://192.168.4.1/bg?mode='+text,true);
+		xhr.send();
+	}	
+	function send_icbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/ic?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_brightness(text) {
+		console.log('set brightness :'+text)
+		xhr.open('GET','http://192.168.4.1/cc?brightness='+text,true);
+		xhr.send();
+	}	
+
+</script>
+</body>
+</html>

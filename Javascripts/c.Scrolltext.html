@@ -1,0 +1,55 @@
+<html>
+<body>
+<form name="inputform">
+<P>
+  <INPUT TYPE="text" NAME="textfield1" VALUE="put scrolltext here" SIZE=50>
+  <button onclick="send_scrolltext(inputform.textfield1.value)">Send</button>
+</p>
+<p>
+  general brightness (1-255): <input id="slider1" type="range" min="1" max="255" step="5" value="50" onchange="send_brightness(slider1.value)"/>
+</p>
+<p>
+  scroll brightness (1-255): <input id="slider3" type="range" min="1" max="255" step="5" value="200" onchange="send_scbrightness(slider3.value)"/>
+</p>
+<p>
+  background brightness (1-255): <input id="slider4" type="range" min="1" max="255" step="5" value="50" onchange="send_bgbrightness(slider4.value)"/>
+</p>
+<p>
+  icon brightness (1-255): <input id="slider5" type="range" min="1" max="255" step="5" value="200" onchange="send_icbrightness(slider5.value)"/>
+</p>
+<p>
+  delay/speed(3-200): <input id="slider2" type="range" min="3" max="200" step="1" value="30" onchange="send_wait(slider2.value)"/>
+</p>
+
+
+<script>
+	var xhr=new XMLHttpRequest();
+	function send_scrolltext(text) {
+		xhr.open('GET','http://192.168.4.1/sc?scrolltext='+text,true);
+		xhr.send();
+	}	
+	function send_brightness(text) {
+		xhr.open('GET','http://192.168.4.1/cc?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_scbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/sc?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_bgbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/bg?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_icbrightness(text) {
+		xhr.open('GET','http://192.168.4.1/ic?brightness='+text,true);
+		xhr.send();
+	}	
+	function send_wait(text) {
+		xhr.open('GET','http://192.168.4.1/sc?wait='+text,true);
+		xhr.send();
+	}	
+
+</script>
+</form>
+</body>
+</html>
