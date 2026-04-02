@@ -1,19 +1,25 @@
 //
-// LedScrollBoard V1.0
+// LedScrollBoard V1.1
 //  
-// ESP8266 firmware and web inteface for scrolltext / pixel editor  
+// ESP8266 firmware and web interface for scrolltext / pixel editor  
 // based on the WiFi-enabled Led Workshop by Rui (Ray) Wang - thanks to Ray !!
 // visit: rayshobby.net/?p=10963   watch: https://www.youtube.com/watch?v=ZKuIWDocIiM
 // 
-// adapted for AI-Thinker ESP12 boards + WS2812 led pixels by chris veigl / chris@shifz.org
-// additional features: 
+// Adapted for AI-Thinker ESP12 boards + WS2812 led pixels by chris veigl / chris@shifz.org
+// Additional features: 
 // DNS/captive portal, big scrollboard size, icon animations, brightness & scroll speed control
 //
-// select NodeMCU 0.9 (ESP12-Module) in tools->board
-// connect led pixels to GPIO3 (RX-Pin ! used for DMA-supported output by NeoPixelBus lilbrary) 
-// connect a potentiometer for max brightness control to A0 
-// connect an led to Pin5 (D1) to indicate main loop operation
-// connect a momentary switch to Pin4 (D2) - when pressed at startup/reset, captive portal/DNS is not used
+// Arduino IDE setup:
+//   In File->Preferences->Additional board manager: insert EPS8266 board manager URL 
+//   http://arduino.esp8266.com/stable/package_esp8266com_index.json
+//   In Tools->board: select "Lolin(Wemos) D1 R2 & mini" or "NodeMCU 0.9 (ESP12-Module)" 
+//   In Tools->Manage Libraries: install NeoPixelBus library by makuna
+//
+// HW setup:
+//   connect led pixels to GPIO3 (RX-Pin ! used for DMA-supported output by NeoPixelBus lilbrary) 
+//   connect a potentiometer for max brightness control to A0 
+//   connect an led to Pin5 (D1) to indicate main loop operation
+//   connect a momentary switch to Pin4 (D2) - when pressed at startup/reset, captive portal/DNS is not used
 //
 
 #include <ESP8266WiFi.h>
@@ -22,11 +28,10 @@
 #include <NeoPixelBus.h>
 #include "font5x7.h"
 
-#define BIG_BOARD
-// #define UNIQUE_AP_NAME    // uncomment this if you want to use multiple boards 
+#define AP_NAME "ExtensionBoard"
+// #define UNIQUE_AP_NAME    // uncomment this if you want unique AP naem (when using multiple boards) 
 
-#define PIN_BUTTON  4    // marked as D2 on AI-Thinker ESP12 board !
-#define PIN_LED     5    // marked as D1 on AI-Thinker ESP12 board !
+#define BIG_BOARD   // uncomment this when using a bigger scrollboard, not just a 8x7 matrix
 
 #ifdef BIG_BOARD
   #define NUM_COLUMNS 41    // big board hast 41 columns 
@@ -36,6 +41,9 @@
   #define ICON_OFFSET 6
 #endif  
 
+#define PIN_BUTTON  4    // marked as D2 on AI-Thinker ESP12 board !
+#define PIN_LED     5    // marked as D1 on AI-Thinker ESP12 board !
+
 #define NUM_LEDS    NUM_COLUMNS*7   // 7 leds (rows) per column
 
 #define MAX_ICONS 10
@@ -43,6 +51,8 @@
 
 #define BG_MODE_FILL    0   // background modes
 #define BG_MODE_RAINBOW 1
+
+#define TIMEOUT 120000    // milliseconds for reset of user-defined messages
 
 // Neopixel object
 // this uses GPIO3 (marked as RX on the AT-Thinker ESP12 board)
@@ -61,14 +71,27 @@ byte bg_brightness = 30;
 uint16_t bg_wait = 20;
 uint32_t bg_color = 0x0000a0;
 
-String scrolltext = "       hello !  this is the open led billboard.    to post your message: connect to WiFi LedScrollBoard !      ";
-byte scrollindex = 0;
-byte scroll_mode=1;
-byte scroll_brightness = 200;
-uint16_t scrollwait = 40;
-uint32_t scrollcolor = 0xa0a000;
+String defaultScrolltext = "       Welcome $1 to .Extension  $1  $1  $1    This is a collaborative space, hosting different artists and projects:     HamidArt.at is researching ceramics and 3d-printed molds, using clay and local materials.         DKIA.at is a collective, developing electronic prototypes and interactive art.          The Asterics Foundation promotes Open Source Assistive Technologies for people with disabilities.           Room to get creative  !!!          And hey! - you can display your own message here !!   just connect your smartphone to WiFi Access Point ExtensionBoard  - and have fun !!               ";
+String scrolltext; 
 
-uint32_t icons[MAX_ICONS][ICON_PIXELS+1] = { 0 }; // icon buffer. this holds up to 10 icons
+uint32_t resetTimeout=0;
+
+int scrollindex = 0;
+byte scroll_mode=1;
+byte scroll_brightness = 180;
+uint16_t scrollwait = 10;
+uint32_t scrollcolor = 0x808080;
+
+// icon buffer - this holds up to 10 icons:
+// first icon (heart) is initiaized per default
+uint32_t icons[MAX_ICONS][ICON_PIXELS+1] = { 
+  0x00,0x00,0x00,0xff0000,0xff0000,0x00,0x00,  // row 1
+  0x00,0xff0000,0xff0000,0xff0000,0xff0000,0x00,0x00,  // row 2
+  0x00,0xff0000,0xff0000,0xff0000,0xff0000,0x00,0x00,  // row 3
+  0x00,0xff0000,0xff0000,0xff0000,0xff0000,0x00,0x00,  // row 4
+  0x00,0x00,0x00,0xff0000,0xff0000,0x00,0x00,   // row 5
+};
+
 uint16_t anim_wait = 100;
 uint16_t icon_pos=0;
 uint16_t preview_acticon=0;
@@ -153,10 +176,24 @@ void setup() {
   // Initialize LEDs
   leds.Begin();
   leds.Show();
+
+  Serial.println("\nESP8266 hotspot ready !");
+  Serial.println("Default message:\n" + defaultScrolltext);
+
+  scrolltext=defaultScrolltext;
+  updateIconPlaceholders();
+
 }
 
 void loop() {
-  
+
+  // make sure a user-posted message does not persist ...
+  if (resetTimeout) {   
+    if (millis()-resetTimeout > TIMEOUT) {
+      ESP.restart();
+    }
+  }
+
   if (serve_dns_requests)
     dnsServer.processNextRequest();
 
@@ -271,6 +308,18 @@ void update_icons() {
       else act_anim=0; 
     }
     preview_acticon--;
+  }
+}
+
+void updateIconPlaceholders() {
+  int iconpos=0;
+  while ((iconpos=scrolltext.indexOf('$',iconpos)) > -1)
+  {
+     uint8_t c =scrolltext[iconpos+1];
+     if ((c>='1') && (c<='9')) {         
+        scrolltext[iconpos+1]= c-'0'+9;  // this will identify the icon number !          
+        scrolltext.remove(iconpos,1);
+     } else iconpos++;     
   }
 }
 
@@ -418,20 +467,12 @@ void on_icon() {
 }
 
 void on_scroll() {
-  int iconpos=0;
   if(server.hasArg("scrolltext")) {
     scrolltext = server.arg("scrolltext");
     scrolltext = " "+scrolltext;
-    // check for icon in scrolltext
-    while ((iconpos=scrolltext.indexOf('$',iconpos)) > -1)
-    {
-       uint8_t c =scrolltext[iconpos+1];
-       if ((c>='1') && (c<='9')) {         
-          scrolltext[iconpos+1]= c-'0'+9;  // this will identify the icon number !          
-          scrolltext.remove(iconpos,1);
-       } else iconpos++;     
-    }
+    updateIconPlaceholders();
     scrollindex = 0;
+    resetTimeout = millis();
   }
   if(server.hasArg("wait")) {
     scrollwait = scale_wait(server.arg("wait").toInt());
@@ -488,7 +529,7 @@ char dec2hex(byte dec) {
 // AP name is ESP_ following by 
 // the last 6 bytes of MAC address
 String get_ap_name() {
- static String ap_name = "LedScrollBoard";
+ static String ap_name = AP_NAME;
 
  #ifdef UNIQUE_AP_NAME 
     byte mac[6];
@@ -501,7 +542,7 @@ String get_ap_name() {
   return ap_name;
 }
 
-void button_handler() {
+void IRAM_ATTR button_handler() {
   button_clicked = true;
 }
 
@@ -522,4 +563,3 @@ void show_leds() {
   }
   leds.Show();
 }
-
